@@ -83,8 +83,9 @@ function viewDept() {
         //console.log(rows)
         // console.log('Data received from Db:');
         rows.forEach(function(row){
-            console.log(`ID:${row.id} Department Name: ${row.name}`)
+            console.table(`ID:${row.id} Department Name: ${row.name}`)
         });
+        askQuestions();
     });
 
 };
@@ -131,29 +132,44 @@ function viewRole() {
         }
         //console.log(rows);
         rows.forEach(function(row){
-            console.log(`ID: ${row.id} Role Name: ${row.title} Salary: ${row.salary} Department ID:${row.department_id}`)
+            console.table(`ID: ${row.id} | Role Name: ${row.title} | Salary: ${row.salary} | Department ID:${row.department_id}`)
         });
+        askQuestions();
     });
 };
 
-// no clue how to do this......
+// this was really tough!!!!!!!!!!!!!!!!!
 function updateRole(){
-    inquirer.prompt([
-        {
-            name: "update",
-            type: "list",
-            message: "Please select the employee you would like to update:",
-            choices: []
-        }
-    ])
-    connection.query("UPDATE employee SET role_id = ? WHERE id = ?",
-    function(err, data){
-        if(err) {
+    connection.query("SELECT * FROM employee",
+    function(err, rows){
+        if(err){
             throw err;
-        };
+        }
+        console.table(rows);
+        inquirer.prompt([
+            {
+                name: "employeeId",
+                type: "input",
+                message: "Please enter ID of employee you would like to update:"
+            },
+            {
+                name: "newRole",
+                type: "input",
+                message: "Please enter new role ID you would like to assign:"
+            }
+        ]).then(function(res){
+            connection.query(`UPDATE employee SET role_id = ${res.newRole}`,
+            function(err){
+                if(err){
+                    throw err;
+                }
+                console.log("Success! Role has been updated!")
+
+                askQuestions();
+            })
+        })
     });
-};
-// read above comment!!!!!!!!!!!!!!!!!!
+}
 
 function addEmployee() {
     inquirer.prompt([
@@ -203,8 +219,9 @@ function(err, rows){
     };
     //console.log(rows);
     rows.forEach(function(row){
-        console.log(`ID: ${row.id} Name:${row.first_name} ${row.last_name} Role ID:${row.role_id} Manager ID:${row.manager_id}`)
+        console.table(`ID: ${row.id} | Name: ${row.first_name} ${row.last_name} | Role ID: ${row.role_id} | Manager ID: ${row.manager_id}`)
     });
+    askQuestions();
 });
 };
 
