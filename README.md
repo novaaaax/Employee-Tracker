@@ -1,6 +1,6 @@
 # Employee Tracker
 ## Description: 
-Boy... this assignment was really tough, but so satisfying to complete!!! This software is created to help keep track of things like salary, positions and employees for companies.
+Boy... this assignment was really tough, but so satisfying to complete!!! This software is created to help keep track of things like salary, departments, positions and employees for companies.
 ## Table Of Contents:
 * How To Install
 * Usage
@@ -9,12 +9,13 @@ Boy... this assignment was really tough, but so satisfying to complete!!! This s
 * Tests
 * GitHub
 ## How To Install: 
-None
+App is launched through command line prompt "node server.js"
 ## Usage:
 Meant for anyone who needs a solutions for the issue stated above.
 ![img](example.jpeg)
+All the choices seen in the list of the image are all the possible uses for this application.
 ## Technologies Used/Bagdes: 
-![img](https://img.shields.io/badge/JavaScript-used-red)
+![img](https://img.shields.io/badge/JavaScript-used-red) ![img](https://img.shields.io/badge/MySQL-used-red)
 ## Lisence:  
 MIT
 ## Contributors:
