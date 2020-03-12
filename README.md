@@ -13,6 +13,7 @@ App is launched through command line prompt "node server.js"
 ## Usage:
 Meant for anyone who needs a solutions for the issue stated above.
 ![img](example.jpeg)
+</br>
 All the choices seen in the list of the image are all the possible uses for this application.
 ## Technologies Used/Bagdes: 
 ![img](https://img.shields.io/badge/JavaScript-used-red) ![img](https://img.shields.io/badge/MySQL-used-red)
