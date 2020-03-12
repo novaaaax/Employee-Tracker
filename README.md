@@ -11,7 +11,7 @@ Boy... this assignment was really tough, but so satisfying to complete!!! This s
 ## How To Install: 
 App is launched through command line prompt "node server.js"
 ## Usage:
-Meant for anyone who needs a solutions for the issue stated above.
+This is a very easy to use command line tool that allows users to store information about their company in a database where they are able to view and edit that information at any time.
 ![img](example.jpeg)
 </br>
 All the choices seen in the list of the image are all the possible uses for this application.
